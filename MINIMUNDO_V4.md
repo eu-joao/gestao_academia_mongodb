@@ -4,14 +4,15 @@
 Campus Esperança  
 Curso de Análise e Desenvolvimento de Sistemas
 
-Disciplina: Desenvolvimento de Aplicações Web II  
-Grupo: Samuel Cláudio Duarte Lima, João Augusto Silva de Araújo, Arley Andrey Alves Pereira, Miguel Rodrigo da Silva Normando
+Disciplina: Banco de dados II
+Grupo: Samuel Cláudio Duarte Lima, João Augusto Silva de Araújo, Jhonata Leonardo da silva, Miguel Rodrigo da Silva Normando
+
 
 ---
 
 ## Contexto e Problema
 
-Redes de academias de ginástica enfrentam dificuldades crescentes para gerenciar, de forma integrada, o controle financeiro de múltiplas unidades físicas e o acompanhamento individualizado do perfil de treino de cada aluno. A ausência de um sistema centralizado provoca inconsistências nos registros de pagamento, dificuldade no acompanhamento de inadimplência, falta de visibilidade sobre a situação financeira consolidada da rede e ausência de padronização na prescrição de treinos.
+Redes de academias enfrentam dificuldades crescentes para gerenciar, de forma integrada, o controle financeiro de múltiplas unidades físicas e o acompanhamento individualizado do perfil de treino de cada aluno. A ausência de um sistema centralizado provoca inconsistências nos registros de pagamento, dificuldade no acompanhamento de inadimplência, falta de visibilidade sobre a situação financeira consolidada da rede e ausência de padronização na prescrição de treinos.
 
 O sistema proposto tem como objetivo o gerenciamento contábil, de acesso físico e de treino de uma rede de academias. Seu escopo cobre o controle financeiro integrado à catraca de cada unidade e a geração automática de fichas de treino personalizadas por aluno, permitindo que o personal trainer tenha o programa de treino pronto no momento do cadastro. O sistema não contempla funcionalidades como agendamentos, gestão de funcionários ou modalidades online.
 
