@@ -3,6 +3,8 @@ package br.edu.ifpb.academia.service;
 import java.math.BigDecimal;
 import java.util.List;
 
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -29,6 +31,7 @@ public class PlanoService {
 		return repository.findAll().stream().map(Mapper::toResponse).toList();
 	}
 
+	@Cacheable(value = "planos", key = "#id")
 	@Transactional(readOnly = true)
 	public PlanoResponse buscar(Long id) {
 		return Mapper.toResponse(buscarEntidade(id));
@@ -44,6 +47,7 @@ public class PlanoService {
 		return Mapper.toResponse(repository.save(plano));
 	}
 
+	@CacheEvict(value = "planos", key = "#id")
 	@Transactional
 	public PlanoResponse atualizar(Long id, PlanoRequest request) {
 		Plano plano = buscarEntidade(id);
@@ -51,6 +55,7 @@ public class PlanoService {
 		return Mapper.toResponse(repository.save(plano));
 	}
 
+	@CacheEvict(value = "planos", key = "#id")
 	@Transactional
 	public void excluir(Long id) {
 		repository.delete(buscarEntidade(id));
@@ -72,5 +77,3 @@ public class PlanoService {
 		plano.setDescricao(request.descricao());
 	}
 }
-
-
