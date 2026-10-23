@@ -1,0 +1,45 @@
+[tools]
+java = "17"
+maven = "3.9.9"
+
+# ==========================================
+# Tasks de desenvolvimento
+# ==========================================
+
+[tasks.dev-run]
+  run = "mvn spring-boot:run"
+  description = "Inicia a aplicacao Spring Boot"
+
+[tasks.dev-test]
+  run = "mvn test"
+  description = "Executa os testes"
+
+[tasks.dev-build]
+  run = "mvn clean package"
+  description = "Compila e empacota"
+
+[tasks.start]
+  run = "mvn spring-boot:run"
+  description = "Inicia a aplicacao"
+  
+[tasks.test]
+  run = "mvn test"
+  description = "Executa testes"
+
+[tasks.build]
+  run = "mvn clean package"
+  description = "Build completo"
+
+[tasks.build-no-test]
+  run = "mvn clean package -DskipTests"
+  description = "Build sem testes"
+
+# ==========================================
+# Configuracoes de ambiente
+# ==========================================
+
+[env]
+# Variaveis de ambiente padrao
+# SUPABASE_DATABASE_URL = "postgresql://user:password@localhost:5432/gestao_academia"
+# REDIS_HOST = "localhost"
+# REDIS_PORT = "6379"
