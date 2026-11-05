@@ -1,0 +1,14 @@
+services:
+    app:
+        image: mcr.microsoft.com/devcontainers/java:1-17-bookworm
+        command: sleep infinity
+        volumes:
+            - ..:/workspaces:cached
+        environment:
+            SPRING_DATA_REDIS_HOST: redis
+        depends_on:
+            - redis
+
+    redis:
+        image: redis:7-alpine
+        restart: unless-stopped
