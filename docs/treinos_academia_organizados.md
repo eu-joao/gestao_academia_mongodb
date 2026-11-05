@@ -1,5 +1,7 @@
 # Treinos de Academia
 
+> Este documento é material de referência para os treinos propostos; seu conteúdo não é carregado pela aplicação. O `DataInitializer` cria os programas por perfil, mas não popula seus dias nem exercícios. Consulte [REQUISITOS.md](REQUISITOS.md) para a situação no código.
+
 > Organização por **número de dias por semana** e, dentro de cada quantidade de dias, por **nível: iniciante → intermediário → avançado**.
 
 **Observação:** o conteúdo dos treinos foi mantido conforme o arquivo original; apenas a organização e a formatação em Markdown foram ajustadas. A versão original contém duas ocorrências idênticas do treino avançado de 5 dias, então ambas foram preservadas abaixo.
