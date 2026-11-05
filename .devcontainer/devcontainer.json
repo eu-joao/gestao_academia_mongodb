@@ -1,0 +1,13 @@
+{
+    "name": "Gestao de Academia",
+    "dockerComposeFile": "compose.yaml",
+    "service": "app",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "forwardPorts": [8080],
+    "portsAttributes": {
+        "8080": {
+            "label": "API Spring Boot"
+        }
+    },
+    "postCreateCommand": "./mvnw -q -DskipTests dependency:resolve"
+}
