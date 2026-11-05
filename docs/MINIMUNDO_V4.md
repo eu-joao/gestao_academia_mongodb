@@ -7,6 +7,14 @@ Curso de Análise e Desenvolvimento de Sistemas
 Disciplina: Banco de dados II
 Grupo: Samuel Cláudio Duarte Lima, João Augusto Silva de Araújo, Jhonata Leonardo da silva, Miguel Rodrigo da Silva Normando
 
+> Este documento descreve o domínio e o escopo proposto; não é uma declaração de que todos os comportamentos já foram entregues. A situação conferida no código está em [REQUISITOS.md](REQUISITOS.md). Em particular, a integração física com catraca e o envio real de WhatsApp continuam planejados.
+
+| Área | Situação observada no código |
+|---|---|
+| Cadastros, planos, contratos, cobranças e operações básicas da API | Implementados, com as limitações descritas em [Arquitetura, configuração e API](ARQUITETURA_E_API.md). |
+| Programas e treinos ativos | Parcial: o programa é associado ao perfil e o histórico é mantido, mas os dias e exercícios não são inicializados como fichas completas. |
+| Cobranças do contrato | Parcial: a criação do contrato gera uma cobrança, não uma cobrança por todo o período contratado. |
+| Catraca física e integração WhatsApp | Planejadas: há uma consulta de decisão de acesso; as mensagens de cobrança são apenas registradas no console. |
 
 ---
 
@@ -52,7 +60,7 @@ Os exercícios são entidades globais do sistema, existindo de forma independent
 
 O contrato é o vínculo formal entre o aluno e a academia. Ele registra qual plano foi escolhido, a unidade de origem, a data de início, a data de término prevista — calculada automaticamente com base na duração do plano — e o status atual (ativo ou cancelado). A unidade de origem no contrato é o único ponto de associação entre o aluno e uma unidade física, permitindo que o mesmo aluno firme contratos em unidades diferentes ao longo do tempo.
 
-Quando um contrato é cancelado, o aluno associado é automaticamente marcado como inativo, tendo seu acesso físico bloqueado na catraca. Um aluno pode ter apenas um contrato ativo por vez. O sistema prevê um período de carência de dois dias após o vencimento da cobrança, durante o qual o acesso permanece liberado mesmo sem confirmação do pagamento. Após esse prazo, o bloqueio é aplicado automaticamente.
+No código atual, o cancelamento de um contrato inativa o aluno, e um aluno não pode ter mais de um contrato ativo. A inativação automática por vencimento ou falta de renovação é prevista neste domínio, mas não está implementada. A tarefa diária marca uma cobrança pendente como atrasada quando sua data de vencimento é anterior a `hoje - 2 dias`; a consulta de acesso considera o status da cobrança. Não há integração física com catraca.
 
 ### Treino Ativo
 
@@ -62,15 +70,15 @@ Quando o nível de experiência ou a frequência semanal do aluno é atualizado,
 
 ### Cobranças
 
-Ao ser firmado um contrato, o sistema gera automaticamente as cobranças correspondentes ao período contratado, com base no valor e na duração do plano. Cada cobrança registra a data de vencimento, o valor, a data de pagamento (quando houver), a forma de pagamento utilizada e o status (pendente, pago ou atrasado). O status de cada cobrança é atualizado automaticamente pelo sistema conforme as datas de vencimento são atingidas.
+No modelo proposto, o contrato gera cobranças para o período contratado. No código atual, a criação do contrato gera uma única cobrança com vencimento na data de início; o valor vem do plano. Cada cobrança registra vencimento, valor, data e forma de pagamento (quando houver) e status. O pagamento é registrado por operação e cobranças pendentes passam a atrasadas depois de dois dias de carência, em uma tarefa diária.
 
-### Controle de Acesso — Catraca
+### Controle de Acesso — requisito de catraca
 
-Cada unidade da rede possui uma catraca integrada ao sistema. O acesso do aluno é liberado automaticamente quando há contrato ativo e nenhuma cobrança atrasada em aberto, respeitado o período de carência. Caso o aluno esteja com pagamento em atraso ou com contrato cancelado, a catraca é bloqueada automaticamente até que a situação seja regularizada.
+O requisito prevê uma catraca por unidade e liberação com contrato ativo, sem cobranças atrasadas e respeitando a carência. Hoje existe apenas `GET /acessos/alunos/{alunoId}`, que verifica o status do aluno, contrato ativo e cobranças atrasadas. A aplicação não se comunica com equipamentos físicos.
 
-### Notificações Automáticas via WhatsApp
+### Notificações automáticas via WhatsApp — requisito planejado
 
-O sistema realiza o envio automático de notificações para o número de telefone cadastrado do aluno por meio da API do WhatsApp. As notificações são disparadas nos seguintes eventos: proximidade do vencimento de uma cobrança e registro de cobrança em atraso. O envio é automático, sem necessidade de intervenção manual do administrador.
+O requisito prevê notificações para vencimento próximo e cobrança atrasada por uma API do WhatsApp. A implementação atual agenda a verificação de cobranças, mas `NotificacaoWhatsAppService` apenas escreve uma mensagem no console; não envia mensagens nem integra com serviço externo.
 
 ---
 
@@ -93,17 +101,19 @@ O sistema realiza o envio automático de notificações para o número de telefo
 
 ## Regras de Negócio
 
-| # | Regra |
-|---|---|
-| RN01 | Valor da cobrança sempre derivado do plano contratado; não pode ser alterado manualmente por contrato. |
-| RN02 | Planos de maior duração possuem desconto progressivo embutido no valor total, aplicado automaticamente pelo sistema. |
-| RN03 | O cancelamento de um contrato inativa automaticamente o aluno associado e bloqueia seu acesso na catraca. |
-| RN04 | Um aluno não pode ter mais de um contrato ativo simultaneamente. |
-| RN05 | A catraca libera acesso apenas para alunos com contrato ativo e sem cobranças atrasadas; é respeitado um período de carência de dois dias após o vencimento antes do bloqueio automático. |
-| RN06 | As cobranças são geradas automaticamente no momento da criação do contrato, para todo o período contratado. |
-| RN07 | Notificações via WhatsApp são disparadas automaticamente nos eventos de vencimento próximo e cobrança atrasada, sem intervenção manual. |
-| RN08 | Um aluno só pode ter um TreinoAtivo com status ativo por vez. |
-| RN09 | A seleção do ProgramaTreino é automática, determinada pela combinação de nivelExperiencia e frequenciaSemanal do aluno. |
-| RN10 | Ao atualizar o nível de experiência ou a frequência semanal do aluno, o TreinoAtivo vigente é encerrado e um novo é criado com o programa correspondente ao novo perfil. |
-| RN11 | Séries, repetições e ordem de execução são atributos de DiaTreinoExercicio — não do exercício em si. O mesmo exercício pode ter configurações distintas em programas e dias diferentes. |
-| RN12 | Os dias de treino de um programa são executados em ordem sequencial. Ao concluir o último dia do ciclo, a sequência reinicia desde o primeiro. |
+As regras abaixo registram o domínio proposto. A situação indica o que o código atual cobre; requisitos não implementados não devem ser tratados como comportamento disponível.
+
+| # | Regra de domínio | Situação no código |
+|---|---|---|
+| RN01 | Valor da cobrança sempre derivado do plano contratado; não pode ser alterado manualmente por contrato. | Implementado: criação e atualização derivam o valor do plano. |
+| RN02 | Planos de maior duração possuem desconto progressivo embutido no valor total, aplicado automaticamente pelo sistema. | Parcial: há valores iniciais com descontos e validação de desconto positivo para planos longos; a progressão não é calculada automaticamente. |
+| RN03 | O cancelamento de um contrato inativa automaticamente o aluno associado e bloqueia seu acesso na catraca. | Parcial: cancelar inativa o aluno e a API de acesso o nega; catraca física não está integrada. |
+| RN04 | Um aluno não pode ter mais de um contrato ativo simultaneamente. | Implementado na criação do contrato. |
+| RN05 | A catraca libera acesso apenas para alunos com contrato ativo e sem cobranças atrasadas; é respeitado um período de carência de dois dias após o vencimento antes do bloqueio automático. | Parcial: endpoint verifica status do aluno, contrato e cobranças; a tarefa diária usa vencimento anterior a `hoje - 2 dias`. Não há catraca física. |
+| RN06 | As cobranças são geradas automaticamente no momento da criação do contrato, para todo o período contratado. | Parcial: a criação gera uma cobrança, não todas as cobranças do período. |
+| RN07 | Notificações via WhatsApp são disparadas automaticamente nos eventos de vencimento próximo e cobrança atrasada, sem intervenção manual. | Parcial: a tarefa é agendada, mas o serviço apenas escreve no console e não envia WhatsApp. |
+| RN08 | Um aluno só pode ter um TreinoAtivo com status ativo por vez. | Implementado pela sincronização do treino ativo; não há endpoint de encerramento manual. |
+| RN09 | A seleção do ProgramaTreino é automática, determinada pela combinação de nivelExperiencia e frequenciaSemanal do aluno. | Implementado pela busca do programa correspondente ao perfil. |
+| RN10 | Ao atualizar o nível de experiência ou a frequência semanal do aluno, o TreinoAtivo vigente é encerrado e um novo é criado com o programa correspondente ao novo perfil. | Implementado pela sincronização após mudança no perfil. |
+| RN11 | Séries, repetições e ordem de execução são atributos de DiaTreinoExercicio — não do exercício em si. O mesmo exercício pode ter configurações distintas em programas e dias diferentes. | Implementado no modelo da entidade de associação. |
+| RN12 | Os dias de treino de um programa são executados em ordem sequencial. Ao concluir o último dia do ciclo, a sequência reinicia desde o primeiro. | Planejado: não há controle de avanço ou reinício do ciclo. |
