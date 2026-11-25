@@ -99,6 +99,13 @@ public class AlunoService {
 		aluno.setFrequenciaSemanal(request.frequenciaSemanal());
 		aluno.setStatus(request.status() == null ? StatusAluno.ATIVO : request.status());
 	}
+// Criar o método de imagem
+	@Transactional
+	public void atualizarFoto(Long id, String caminhoArquivo) {
+		Aluno aluno = buscarEntidade(id);
+		aluno.setFotoUrl(caminhoArquivo);
+		repository.save(aluno);
+	}
 }
 
 

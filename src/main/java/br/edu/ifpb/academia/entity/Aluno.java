@@ -37,6 +37,9 @@ public class Aluno {
 
 	@Column(nullable = false, unique = true)
 	private String email;
+//foto do aluno que vai ser salva no supabase
+	@Column(name = "foto_url")
+	private String fotoUrl;
 
 	@Column(nullable = false)
 	private LocalDate dataNascimento;
