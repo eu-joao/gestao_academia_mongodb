@@ -6,7 +6,7 @@
 
 ## 3 dias por semana
 
-### Iniciante — 6 dias — 4 dias — 3 dias
+### Iniciante — 3 dias
 
 #### Fullbody — iniciante (3 dias)
 
@@ -31,7 +31,7 @@
 | Dia C | Bíceps | Rosca martelo | 2x10 |
 | Dia C | Panturrilha | Elevação no leg press | 2x12 |
 
-### Intermediario — 6 dias — 4 dias — 3 dias
+### Intermediario — 3 dias
 
 #### Fullbody — intermediário (3 dias)
 
@@ -61,7 +61,7 @@
 | Dia C | Tríceps | Tríceps francês na Polia | 2x10 |
 | Dia C | Panturrilha | Elevação no leg press | 2x12 |
 
-### Avançado — 6 dias — 4 dias — 3 dias
+### Avançado — 3 dias
 
 #### Fullbody — avançado (3 dias)
 
@@ -176,7 +176,7 @@
 
 ## 4 dias por semana
 
-### Iniciante
+### Iniciante — 4 dias
 
 #### Upper/Lower — iniciante (4 dias)
 
@@ -225,7 +225,7 @@
 | Lower | Posterior | Mesa flexora | 2x10 |
 | Lower | Panturrilha | Elevação sentado | 2x12 |
 
-### Intermediario
+### Intermediario — 4 dias
 
 #### Upper/Lower — intermediário (4 dias)
 
@@ -289,7 +289,7 @@
 | Lower | Panturrilha | Elevação sentado | 2x12 |
 | Lower | Abdômen | Abdominal na polia | 2x10 |
 
-### Avançado
+### Avançado — 4 dias
 
 #### Upper/Lower — avançado (4 dias)
 
@@ -330,7 +330,7 @@
 
 ## 6 dias por semana
 
-### Iniciante
+### Iniciante — 6 dias
 
 #### PPL 2x — iniciante (6 dias)
 
@@ -361,7 +361,7 @@
 | Legs B | Posterior | Mesa flexora | 3x10 |
 | Legs B | Panturrilha | Elevação sentado | 3x12 |
 
-### Intermediario
+### Intermediario — 6 dias
 
 #### PPL 2x — intermediário (6 dias)
 
@@ -397,7 +397,7 @@
 | Legs B | Quadríceps | Cadeira extensora | 3x12 |
 | Legs A | Panturrilha | Elevação em pé | 3x12 |
 
-### Avançado
+### Avançado — 6 dias
 
 #### PPL 2x — avançado (6 dias)
 
