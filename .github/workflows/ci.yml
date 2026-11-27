@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  markdownlint:
+    permissions:
+      contents: read
+    uses: eu-joao/devops/.github/workflows/ci-markdownlint.yml@main
+
+  commitlint:
+    permissions:
+      contents: read
+    uses: eu-joao/devops/.github/workflows/ci-commitlint.yml@main
+
+  backend:
+    permissions:
+      contents: read
+    uses: eu-joao/devops/.github/workflows/ci-spring.yml@main
+
+  pr-title:
+    permissions:
+      pull-requests: read
+    uses: eu-joao/devops/.github/workflows/ci-pr-title.yml@main
