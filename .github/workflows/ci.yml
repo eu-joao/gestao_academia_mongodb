@@ -7,21 +7,25 @@ on:
 
 jobs:
   markdownlint:
+    name: Markdownlint
     permissions:
       contents: read
     uses: eu-joao/devops/.github/workflows/ci-markdownlint.yml@main
 
   commitlint:
+    name: Commitlint
     permissions:
       contents: read
     uses: eu-joao/devops/.github/workflows/ci-commitlint.yml@main
 
   backend:
+    name: Backend (Spring Boot)
     permissions:
       contents: read
     uses: eu-joao/devops/.github/workflows/ci-spring.yml@main
 
   pr-title:
+    name: Título do PR
     permissions:
       pull-requests: read
     uses: eu-joao/devops/.github/workflows/ci-pr-title.yml@main
