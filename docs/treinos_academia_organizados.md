@@ -6,9 +6,9 @@
 
 ## 3 dias por semana
 
-### Iniciante
+### Iniciante — 6 dias — 4 dias — 3 dias
 
-#### TREINO DE 3 DIAS FULLBODY
+#### Fullbody — iniciante (3 dias)
 
 | Dia | Musculatura | Exercício | Séries/Reps |
 |---|---|---|---|
@@ -31,9 +31,9 @@
 | Dia C | Bíceps | Rosca martelo | 2x10 |
 | Dia C | Panturrilha | Elevação no leg press | 2x12 |
 
-### Intermediario
+### Intermediario — 6 dias — 4 dias — 3 dias
 
-#### TREINO DE 3 DIAS FULLBODY
+#### Fullbody — intermediário (3 dias)
 
 | Dia | Musculatura | Exercício | Séries/Reps |
 |---|---|---|---|
@@ -61,9 +61,9 @@
 | Dia C | Tríceps | Tríceps francês na Polia | 2x10 |
 | Dia C | Panturrilha | Elevação no leg press | 2x12 |
 
-### Avançado
+### Avançado — 6 dias — 4 dias — 3 dias
 
-#### TREINO DE 3 DIAS FULLBODY
+#### Fullbody — avançado (3 dias)
 
 | Dia | Musculatura | Exercício | Séries/Reps |
 |---|---|---|---|
@@ -178,7 +178,7 @@
 
 ### Iniciante
 
-#### TREINO DE 4 DIAS UPPLER/LOWER
+#### Upper/Lower — iniciante (4 dias)
 
 | Dia | Musculatura | Exercício | Séries/Reps |
 |---|---|---|---|
@@ -227,7 +227,7 @@
 
 ### Intermediario
 
-#### TREINO DE 4 DIAS UPPLER/LOWER
+#### Upper/Lower — intermediário (4 dias)
 
 | Dia | Musculatura | Exercício | Séries/Reps |
 |---|---|---|---|
@@ -291,7 +291,7 @@
 
 ### Avançado
 
-#### TREINO DE 4 DIAS UPPLER/LOWER
+#### Upper/Lower — avançado (4 dias)
 
 | Dia | Musculatura | Exercício | Séries/Reps |
 |---|---|---|---|
@@ -332,7 +332,7 @@
 
 ### Iniciante
 
-#### Treino 6 dias (PPL 2x)
+#### PPL 2x — iniciante (6 dias)
 
 | Dia | Musculatura | Exercício | Séries/Reps |
 |---|---|---|---|
@@ -363,7 +363,7 @@
 
 ### Intermediario
 
-#### Treino 6 dias (PPL 2x)
+#### PPL 2x — intermediário (6 dias)
 
 | Dia | Musculatura | Exercício | Séries/Reps |
 |---|---|---|---|
@@ -399,7 +399,7 @@
 
 ### Avançado
 
-#### Treino 6 dias (PPL 2x)
+#### PPL 2x — avançado (6 dias)
 
 | Dia | Musculatura | Exercício | Séries/Reps |
 |---|---|---|---|
