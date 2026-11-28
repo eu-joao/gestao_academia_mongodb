@@ -6,9 +6,9 @@
 
 ## 3 dias por semana
 
-### Iniciante
+### Iniciante — 3 dias
 
-#### TREINO DE 3 DIAS FULLBODY
+#### Fullbody — iniciante (3 dias)
 
 | Dia | Musculatura | Exercício | Séries/Reps |
 |---|---|---|---|
@@ -31,9 +31,9 @@
 | Dia C | Bíceps | Rosca martelo | 2x10 |
 | Dia C | Panturrilha | Elevação no leg press | 2x12 |
 
-### Intermediario
+### Intermediario — 3 dias
 
-#### TREINO DE 3 DIAS FULLBODY
+#### Fullbody — intermediário (3 dias)
 
 | Dia | Musculatura | Exercício | Séries/Reps |
 |---|---|---|---|
@@ -61,9 +61,9 @@
 | Dia C | Tríceps | Tríceps francês na Polia | 2x10 |
 | Dia C | Panturrilha | Elevação no leg press | 2x12 |
 
-### Avançado
+### Avançado — 3 dias
 
-#### TREINO DE 3 DIAS FULLBODY
+#### Fullbody — avançado (3 dias)
 
 | Dia | Musculatura | Exercício | Séries/Reps |
 |---|---|---|---|
@@ -176,9 +176,9 @@
 
 ## 4 dias por semana
 
-### Iniciante
+### Iniciante — 4 dias
 
-#### TREINO DE 4 DIAS UPPLER/LOWER
+#### Upper/Lower — iniciante (4 dias)
 
 | Dia | Musculatura | Exercício | Séries/Reps |
 |---|---|---|---|
@@ -225,9 +225,9 @@
 | Lower | Posterior | Mesa flexora | 2x10 |
 | Lower | Panturrilha | Elevação sentado | 2x12 |
 
-### Intermediario
+### Intermediario — 4 dias
 
-#### TREINO DE 4 DIAS UPPLER/LOWER
+#### Upper/Lower — intermediário (4 dias)
 
 | Dia | Musculatura | Exercício | Séries/Reps |
 |---|---|---|---|
@@ -289,9 +289,9 @@
 | Lower | Panturrilha | Elevação sentado | 2x12 |
 | Lower | Abdômen | Abdominal na polia | 2x10 |
 
-### Avançado
+### Avançado — 4 dias
 
-#### TREINO DE 4 DIAS UPPLER/LOWER
+#### Upper/Lower — avançado (4 dias)
 
 | Dia | Musculatura | Exercício | Séries/Reps |
 |---|---|---|---|
@@ -330,9 +330,9 @@
 
 ## 6 dias por semana
 
-### Iniciante
+### Iniciante — 6 dias
 
-#### Treino 6 dias (PPL 2x)
+#### PPL 2x — iniciante (6 dias)
 
 | Dia | Musculatura | Exercício | Séries/Reps |
 |---|---|---|---|
@@ -361,9 +361,9 @@
 | Legs B | Posterior | Mesa flexora | 3x10 |
 | Legs B | Panturrilha | Elevação sentado | 3x12 |
 
-### Intermediario
+### Intermediario — 6 dias
 
-#### Treino 6 dias (PPL 2x)
+#### PPL 2x — intermediário (6 dias)
 
 | Dia | Musculatura | Exercício | Séries/Reps |
 |---|---|---|---|
@@ -397,9 +397,9 @@
 | Legs B | Quadríceps | Cadeira extensora | 3x12 |
 | Legs A | Panturrilha | Elevação em pé | 3x12 |
 
-### Avançado
+### Avançado — 6 dias
 
-#### Treino 6 dias (PPL 2x)
+#### PPL 2x — avançado (6 dias)
 
 | Dia | Musculatura | Exercício | Séries/Reps |
 |---|---|---|---|

@@ -1,4 +1,4 @@
-# Documento de Requisitos 
+# Documento de Requisitos
 
 **Projeto:** Sistema de Gestão de Academia
 
@@ -8,7 +8,7 @@
 
 ---
 
-## Requisitos Funcionais 
+## Requisitos Funcionais
 
 | ID | Requisito | Descrição |
 |----|-----------|-----------|
@@ -35,7 +35,7 @@
 
 ---
 
-## Requisitos Não-Funcionais 
+## Requisitos Não-Funcionais
 
 | ID | Requisito | Descrição |
 |----|-----------|-----------|
@@ -48,7 +48,7 @@
 
 ---
 
-## Glossário 
+## Glossário
 
 | Termo | Definição |
 |-------|-----------|

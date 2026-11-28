@@ -7,7 +7,6 @@ Curso de Análise e Desenvolvimento de Sistemas
 Disciplina: Banco de dados II
 Grupo: Samuel Cláudio Duarte Lima, João Augusto Silva de Araújo, Jhonata Leonardo da silva, Miguel Rodrigo da Silva Normando
 
-
 ---
 
 ## Contexto e Problema
